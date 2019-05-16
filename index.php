@@ -157,7 +157,7 @@
             <?php if($msg != ''): ?>
                 <div class="alert <?php echo $msgClass; ?>"><?php echo $msg; ?></div>
             <?php endif; ?>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF#contact']);?>">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'].'contact');?>">
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Your Full Name.." value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
                 </div>                
