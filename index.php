@@ -1,57 +1,12 @@
 <?php
-	// Message Vars
-	$msg = '';
-	$msgClass = '';
+require('createmail.php');
 
-	// Check For Submit
-	if(filter_has_var(INPUT_POST, 'submit')){
-		// Get Form Data
-		$name = htmlspecialchars($_POST['name']);
-		$email = htmlspecialchars($_POST['email']);
-		$message = htmlspecialchars($_POST['message']);
+$name = isset($_POST['name'])? $_POST['name'] : "";
+$mail = isset($_POST['email'])? $_POST['email'] : "";
+$message = isset($_POST['message'])? $_POST['message'] : "";
 
-		// Check Required Fields
-		if(!empty($email) && !empty($name) && !empty($message)){
-			// Passed
-			// Check Email
-			if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
-				// Failed
-				$msg = 'Please use a valid email';
-				$msgClass = 'alert-danger';
-			} else {
-				// Passed
-				// Recipient Email
-				$toEmail = 'balintperjesi@gmail.com';
-				$subject = 'Contact Request From '.$name;
-				$body = '<h2>Contact Request</h2>
-					<h4>Name</h4><p>'.$name.'</p>
-					<h4>Email</h4><p>'.$email.'</p>
-					<h4>Message</h4><p>'.$message.'</p>
-				';
+list($msg, $status) = parseMail($name, $mail, $message);
 
-				// Email Headers
-				$headers = "MIME-Version: 1.0" ."\r\n";
-				$headers .="Content-Type:text/html;charset=UTF-8" . "\r\n";
-
-				// Additional Headers
-				$headers .= "From: " .$name. "<".$email.">". "\r\n";
-
-				if(mail($toEmail, $subject, $body, $headers)){
-					// Email Sent
-					$msg = 'Thank You! Your message has been sent.';
-					$msgClass = 'alert-success';
-				} else {
-					// Failed
-					$msg = 'Something went wrong. Your message was not sent. Please try again.';
-					$msgClass = 'alert-danger';
-				}
-			}
-		} else {
-			// Failed
-			$msg = 'Please fill in all the fields.';
-			$msgClass = 'alert-danger';
-		}
-	}
 ?>
 
 
@@ -154,18 +109,18 @@
         <div class="container">
             <h2>Contact</h2>
             <p class="lead">Get a promotional offer on your next website!<br>For more information, please send a message using the form below.</p>    
-            <?php if($msg != ''): ?>
-                <div class="alert <?php echo $msgClass; ?>"><?php echo $msg; ?></div>
+            <?php if($msg != ""): ?>
+    <div class="alert <?php echo $status; ?>"><?php echo $msg; ?></div>
             <?php endif; ?>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'].'contact');?>">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>#contact">
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Your Full Name.." value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
+                    <input type="text" name="name" class="form-control" placeholder="Your Full Name.." value="<?php echo $name; ?>">
                 </div>                
                 <div class="form-group">
-                    <input type="text" name="email" class="form-control" placeholder="Your Email.." value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
+                    <input type="text" name="email" class="form-control" placeholder="Your Email.." value="<?php echo $mail; ?>">
                 </div>
                 <div class="form-group">
-                    <textarea name="message" class="form-control" placeholder="Your Message.."><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
+                    <textarea name="message" class="form-control" placeholder="Your Message.."><?php echo $message; ?></textarea>
                 </div>
                     <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </form>
