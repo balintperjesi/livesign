@@ -18,9 +18,10 @@ list($msg, $status) = parseMail($name, $mail, $message);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>		
     <script src="js/main.js"></script>
     <title>Livesign Development</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
 <body>
@@ -112,7 +113,8 @@ list($msg, $status) = parseMail($name, $mail, $message);
             <?php if($msg != ""): ?>
     <div class="alert <?php echo $status; ?>"><?php echo $msg; ?></div>
             <?php endif; ?>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>#contact">
+            <form autocomplete="off" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>#contact">
+            <input autocomplete="false" name="hidden" type="text" style="display:none;">
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Your Full Name.." value="<?php echo $name; ?>">
                 </div>                
