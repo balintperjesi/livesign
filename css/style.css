@@ -154,7 +154,8 @@ nav a#openup {
 /* About */
 
 #about {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 #about .image {
@@ -166,6 +167,11 @@ nav a#openup {
 
 
 /* Contact */
+
+#contact {
+    min-height: 90vh;
+    height: auto;
+}
 
 #contact h2 {
     margin-bottom: 4%;
