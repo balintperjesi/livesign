@@ -25,7 +25,7 @@ function parseMail($name, $email, $message) {
 }
     
 function tryToSendMail($name, $email, $message) {
-    $toEmail = 'balintperjesi@gmail.com';
+    $toEmail = 'balint@livesign-development.com';
     $subject = 'Contact Request From '.$name;
     $body = '<h2>Contact Request</h2>
 			<h4>Name</h4><p>'.$name.'</p>
