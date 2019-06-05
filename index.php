@@ -1,5 +1,6 @@
 <?php
 require('createmail.php');
+require('texts.php');
 
 $name = isset($_POST['name'])? $_POST['name'] : "";
 $mail = isset($_POST['email'])? $_POST['email'] : "";
@@ -63,22 +64,22 @@ list($msg, $status) = parseMail($name, $mail, $message);
             <div id="ecommerce" class="flex-container">
                 <h3>eCommerce Websites</h3>
                 <img class="image" src="img/ecommerce.jpg" alt="E-Commerce">
-                <p class="lead">Welcome to Livesign Development! If you run your own business, you certainly want your online shop to be more than just a virtual vitrine. Indeed, the quality of the interaction with your visitors will be crucial to developing your conversion rate. Therefore I offer a complete service allowing you to communicate with your target audience in an efficient way. Showcase a design tailored to your brand, that captures the essence of your activity and products, while fully supporting the message you want to convey to your visitors. So that they actually become your customers. Manage your content as you wish with your personal admin panel: add, modify or suppress products, create news feeds and display special offers. And, obviously, rely on a safe payment system securing both your customers' and your company's bank data. So don't wait, make your business flourish with the website you always wanted!</p>
+                <p class="lead"><?php echo $eCommerce ?></p>
             </div>
             <div id="blog" class="flex-container">
                 <h3>Blogs</h3>
                 <img class="image" src="img/blog.jpg" alt="Blog">
-                <p class="lead">As a business, you rely on consumers to keep buying your products and services. With a well designed and compelling blog, you get the possibility to increase your visibility and grab the consumers' attention. This is even more important for new businesses in order to be competitive. Let me build a blog for you that will stand out not only through the content you will create, but also through its appealing and intuitive user interface. Keep your customers up to date and let your visitors interact with you and your brand. Connect smoothly to the relevant audience through social media integration, and create a network of loyal followers. Boost your traffic and send quality leads to your website. An engaging blog is indeed an effective lead generation tool that helps you build your brand and demonstrate your authority. Make your brand a longlasting standard, get your blog now!</p>
+                <p class="lead"><?php echo $blogs ?></p>
             </div>
             <div id="portfolio" class="flex-container">
                 <h3>Portfolios</h3>
                 <img class="image" src="img/portfolio.jpg" alt="Portfolio">
-                <p class="lead">In all industries, portfolios have become incredibly popular. They help you curate your online image and give you more opportunities to impress hiring managers. Your portfolio is the home of your professional biography, the place where people can access your work. It makes your resume much more appealing by easily collecting all of your clips and samples in one spot. A portfolio is also a powerful tool for job interviews, since it guarantees that all the information you want to present is available and up to date. Get a portfolio designed to not only log your CV, but also highlight your personality and inspire your visitors. Order your portfolio to offer the most effective impression of yourself!</p>
+                <p class="lead"><?php echo $portfolio ?></p>
             </div>
             <div id="seo" class="flex-container">
                 <h3>Search Engine Optimisation</h3>
                 <img class="image" src="img/hay.jpg" alt="Needle in the haystack">
-                <p class="lead">Search Engine Optimisation - or SEO - is the practice of increasing both the quality and quantity of website traffic, as well as exposure to your brand, through non-paid - also known as "organic" - search engine results. While paid advertising can generate traffic to websites, the majority of online traffic is driven by search engines. Organic search results appear more credible to savvy searchers, and receive more clicks than paid advertisements. Optimising your site will help deliver better information to search engines so that your content can be properly indexed and displayed within search results. Make search engines your best allies so your brand becomes visible to the whole world!</p>
+                <p class="lead"><?php echo $seo ?></p>
             </div>
         </div>
     </section>
@@ -88,7 +89,7 @@ list($msg, $status) = parseMail($name, $mail, $message);
         <div class="container">
             <h2>About</h2>
             <img class="image" src="img/balint.jpg" alt="Portrait">
-            <p class="lead">Thank you for taking the time to visit Livesign Development. When choosing a company to work with, you often have questions about who is behind the firm. Let me give you a brief description of who I am. My name is Bálint Perjési, I am the founder of Livesign Development. After a career in performing arts and musical education, I decided to acquire new skills that would allow me to become creative in the field of 21st century technologies and earn a living by working in one of the most in demand professions in today's world. So I learned to code by reading books, following online courses and practicing the craft on various types of projects. Furthermore I was lucky to receive guidance from two good friends who are both well established programmers with extensive knowledge. Today my aim is to help business owners, bloggers and any other professionals achieve their goals by providing them with a beautiful, functional and reliable online presence. For this purpose I chose to start my journey with the PHP-stack: PHP is a well-proven server scripting language, used by roughly 80% of the websites worldwide. It integrates perfectly with the database management system MySQL&reg; and communicates with the browser in a very intuitive way. I also like using WordPress, the most widespread content management system based on PHP. Besides being a web developer, I am also a social person. Having lived in five different countries, I speak four languages: English, French, German and Hungarian, the latter being my mother tongue. I love interacting with people from all horizons and listening to them, which allows me to genuinely understand their needs. Last but not least, I am also passionate about literature, history, cinema and theatre. If you want to tell the world who you are, I would be happy to be your messenger!</p>
+            <p class="lead"><?php echo $about ?></p>
         </div>
     </section>
 
