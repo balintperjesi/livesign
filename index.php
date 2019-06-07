@@ -122,7 +122,7 @@ list($msg, $status) = parseMail($name, $mail, $message);
             <span>Copyright &copy; 2019 Livesign Development</span>
             <span class="hide-credits">  •  Credits &copy;<a href="https://pixabay.com/users/jarmoluk-143740/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=436501">Michal Jarmoluk</a>
               &copy;<a href="https://pixabay.com/users/fill-8988/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=385530">Florian Pircher</a>
-               &copy;<a href="https://www.studio-arlequin.com/">CHOM-STUDIO ARLEQUIN</a>
+               &copy;<a href="https://www.studio-arlequin.com/">CHom-Studio Arlequin</a>
             </span>
         </div>
     </footer>
