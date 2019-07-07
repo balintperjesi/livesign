@@ -17,13 +17,13 @@ list($msg, $status) = parseMail($name, $mail, $message);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Web Development and Responsive Web Design with Search Engine Optimisation for small and mid-sized businesses">
+    <meta name="description" content="Get a quote now. Web Development and Responsive Web Design with Search Engine Optimisation for small and mid-sized businesses">
     <meta name="keywords" content="web developer freelance uk london, web designer freelance uk london">
     <meta name="author" content="Balint Perjesi">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>		
     <script src="js/main.js"></script>
-    <title>Web Development • Responsive Web Design • SEO • Livesign</title>
+    <title>Web Development • Responsive Web Design • SEO | Livesign</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
